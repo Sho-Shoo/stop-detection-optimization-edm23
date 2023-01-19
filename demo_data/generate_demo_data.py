@@ -59,11 +59,36 @@ def generate_position_data(start_time: int, end_time: int, cycle_length=20) -> p
 
     return DF
 
+def generate_seating(classroom_width=10000, classroom_height=10000, horizontal_spacing=2000, vertical_spacing=2000) -> pd.DataFrame: 
+    '''
+    Generate a pandas dataframe with student seat coordinates information. Input 
+    variables define classroom layout. 
+    '''
+
+    DF = pd.DataFrame(columns=["object", "X", "Y"]) 
+
+    seat_index = 0
+    for X in range(horizontal_spacing, classroom_width, horizontal_spacing): 
+        for Y in range(vertical_spacing, classroom_height, vertical_spacing): 
+            # row format: | seat10 | 100 | 100 |
+            DF.loc[len(DF.index)] = [f"seat{seat_index}", X, Y] 
+            seat_index += 1
+
+    return DF
+
+
+
 if __name__ == "__main__": 
 
     random.seed(101)
-    DF = generate_position_data(0, 600) 
-    DF.to_csv("demo_position_data.csv", index=False)
+
+    print("Generating position data ...")
+    positionDF = generate_position_data(0, 600) 
+    positionDF.to_csv("demo_position_data.csv", index=False)
+
+    print("Generating seating chart ...")
+    seatingDF = generate_seating() 
+    seatingDF.to_csv("demo_seating_chart.csv", index=False)
 
 
 
