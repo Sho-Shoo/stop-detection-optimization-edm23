@@ -9,7 +9,7 @@
 
 import math
 import pandas as pd
-from os import times 
+import pprint
 
 def getObsStopEvents(): 
 
@@ -316,3 +316,15 @@ def getStopTags(timestamps, stops):
 #                  teacherPosDF["time_stamp"], 
 #                  duration, radius) 
 # print(stops) 
+
+if __name__ == "__main__": 
+
+    positionDF = pd.read_csv("demo_data/demo_position_data.csv", index_col=False) 
+    # print(positionDF) 
+
+    res = getStopsAndCentroids(positionDF.X, positionDF.Y, positionDF.timestamp, 
+                               positionDF.period, positionDF.day, 10, 1000)
+
+    print("Below are a list of stops detected: ")
+    print("|start | end |   centroid X    |    centroid Y   |")
+    pprint.pprint(res)
