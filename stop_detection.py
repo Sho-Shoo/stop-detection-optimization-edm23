@@ -6,7 +6,6 @@
 # Roberto Martínez-Maldonado, Lixiang Yan, Joanne Deppeler, Michael Phillips, Dragan Gašević, Classroom Analytics: Telling Stories About Learning Spaces Using Sensor Data, Hybrid Learning Spaces, 10.1007/978-3-030-88520-5_11, (185-203), (2022).
 ###########################################################
 
-
 import math
 import pandas as pd
 import pprint
@@ -170,13 +169,6 @@ def getStops(X, Y, timestamp, periods, days, duration, radius):
               periods[startIndex] == periods[endIndex] and 
               days[startIndex] == days[endIndex]): 
             endIndex += 1 
-        
-        # edge case where endIndex advances to the next day/period
-        # edge case where endIndex is out of bound by 1
-        # if(endIndex >= len(pos) or
-        #    periods[startIndex] != periods[endIndex] or
-        #    days[startIndex] != days[endIndex]): 
-        #     endIndex -= 1
 
         endIndex -= 1 # since endIndex always go over by 1, and we want end and start to be both inclusive 
 
