@@ -308,15 +308,6 @@ def getStopTags(timestamps, stops):
     return pd.Series(tags) 
 
 
-# testing code 
-# teacherPosDF = pd.read_csv("teacher_position_sprint1_shou.csv", index_col="Unnamed: 0") 
-# duration, radius = 10, 1000
-# stops = getStops(teacherPosDF["chosen_X"], 
-#                  teacherPosDF["chosen_Y"], 
-#                  teacherPosDF["time_stamp"], 
-#                  duration, radius) 
-# print(stops) 
-
 if __name__ == "__main__": 
 
     positionDF = pd.read_csv("demo_data/demo_position_data.csv", index_col=False) 
