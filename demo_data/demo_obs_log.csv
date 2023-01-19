@@ -1,0 +1,13 @@
+periodID,dayID,timestamp,event,actor,subject
+0,0,23,Talking to student: ON-task,teacher,12
+0,0,60,Talking to class: ON-task,teacher,
+0,0,220,Talking to student: ON-task,teacher,4
+0,0,260,Talking to student: ON-task,teacher,4
+0,0,300,Talking to student: ON-task,teacher,0
+0,0,340,Talking to student: ON-task,teacher,1
+0,0,380,Talking to student: ON-task,teacher,1
+0,0,420,Talking to student: ON-task,teacher,2
+0,0,460,Talking to student: ON-task,teacher,3
+0,0,500,Talking to class: ON-task,teacher,
+0,0,540,Talking to student: ON-task,teacher,7
+0,0,580,Talking to class: ON-task,teacher,
