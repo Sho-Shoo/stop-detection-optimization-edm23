@@ -25,7 +25,7 @@ You can also manually install the following libraries:
 ## Getting started 
 
 - `$ python stop_detection.py` to run stop detection algorithm on demo position data; 
-- Open `param_sweep.ipynb` and run all code chunks to conduct parameter sweep on sample data. The output will be saved to `demo_data/demo_param_sweep_results_medium_resolution.csv`
+- Open `parameter_optimization.ipynb` and run all code chunks to conduct parameter sweep on sample data. The output will be saved to `demo_data/demo_param_sweep_results_medium_resolution.csv`
 
 ## Project structure 
 
