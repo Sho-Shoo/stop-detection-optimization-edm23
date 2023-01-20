@@ -1,5 +1,5 @@
 ###########################################################
-# Created by Tianze (Steven) Shou for RETTL Summer 2022 
+# Created by (Steven) Shou for RETTL Summer 2022 
 # This file serves as a utility package to detect teacher's stopping behavior
 # defined in Martinez-Maldonado R, et al.
 # Full citation below: 
