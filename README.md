@@ -27,7 +27,6 @@ You can also manually install the following libraries:
 
 - `$ python stop_detection.py` to run stop detection algorithm on demo positon data; 
 - Open `param_sweep.ipynb` and run all code chunks to conduct parameter sweep on sample data; output will be saved to `demo_data/demo_param_sweep_results_medium_resolution.csv`
-- Use `$ python demo_data/generate_demo_data.py` if you would like to re-generate `demo_data/demo_position_data.csv` and `demo_data/demo_seating_chart.csv` (optional). 
 
 ## Project structure 
 
@@ -46,7 +45,24 @@ You can also manually install the following libraries:
 
 ## Demo data
 
+To re-generate demo data as you may wish: 
 
+```bash 
+cd demo_data
+python generate_demo_data.py
+```
+
+The virtual classroom setting in this demo dataset is a 10 meter by 10 10 meter square space. Students are seated 2 meters apart from each other in both X and Y directions (see `demo_data/demo_seating_chart.csv` for more details). 
+
+The script-generate teacher movement follows a ecllipse shape, which is implemented by the following parametric functions: 
+
+$$
+X(t) = 3000\cos(0.3t)+5000
+$$
+
+$$
+Y(t) = 5000\sin(0.3t)+5000
+$$
 
 
 
