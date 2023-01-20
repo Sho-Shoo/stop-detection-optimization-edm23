@@ -64,6 +64,12 @@ $$
 Y(t) = 5000\sin(0.3t)+5000
 $$
 
+Below is an illustration image of teacher moving trajectory (oval curve) and student seating (dots): 
+
+<p align="center">
+  <img src="demo_data/illustration.png" />
+</p>
+
 
 
 
