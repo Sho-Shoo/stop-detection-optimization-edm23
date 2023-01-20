@@ -1,5 +1,4 @@
-# EDM-code-demo
-Parameter sweep and stop detection algorithm code demo for EDM 2023
+# Stop Detection Code Demo for EDM 2023
 
 ## Dependencies 
 
@@ -64,12 +63,13 @@ $$
 Y(t) = 5000\sin(0.3t)+5000
 $$
 
-Below is an illustration image of teacher moving trajectory (oval curve) and student seating (dots): 
+Below is an illustration image of teacher moving trajectory (oval curve, **counterclockwise**) and student seating (dots): 
 
 <p align="center">
-  <img src="demo_data/illustration.png" />
+  <img src="demo_data/illustration.png" width="500"/>
 </p>
 
+Please note that length measurement unit is **milimeter** in the above graph, and the classroom is the sqaure bounded by $0 \le x \le 10000$ and $0 \le y \le 10000$. 
 
 
 
