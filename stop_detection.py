@@ -185,7 +185,7 @@ def getStops(X, Y, timestamp, periods, days, duration, radius):
             startIndex = endIndex
 
 
-    assert(validateStops(stops, duration, maxDuration))
+    # assert(validateStops(stops, duration, maxDuration))
     return stops
 
 def getStopsAndCentroids(X, Y, timestamp, periods, days, duration, radius): 

@@ -1,6 +1,7 @@
 from math import cos, sin
 import pandas as pd 
 import random
+from itertools import product
 
 def get_coordinate(t: int) -> tuple: 
     '''
@@ -25,7 +26,7 @@ def toggle_state(state):
 def generate_position_data(start_time: int, end_time: int, cycle_length=20) -> pd.DataFrame: 
     '''
     Generate fake position data sequence according to parametric function 
-    defined in geet_coordinate(). Will generate movement sequence that move for 
+    defined in get_coordinate(). Will generate movement sequence that move for 
     20 seconds, and then stop for 20 seconds, and repeat. Returns a pandas 
     dataframe with fake data sequence. 
     '''
@@ -39,23 +40,26 @@ def generate_position_data(start_time: int, end_time: int, cycle_length=20) -> p
     prev_X, prev_Y = None, None
     DF = pd.DataFrame(columns=["X", "Y", "timestamp", "period", "day"])
 
-    for actual_time in range(start_time, end_time): 
+    days, periods = range(1,4), range(1,6)
 
-        if curr_state_timer >= cycle_length: 
-            state = toggle_state(state) 
-            curr_state_timer = 0
+    for day, period in product(days, periods): 
+        for actual_time in range(start_time, end_time): 
 
-        if state == "moving": 
-            X, Y = get_coordinate(param_fn_input)
-            param_fn_input += 1
-            prev_X, prev_Y = X, Y
+            if curr_state_timer >= cycle_length: 
+                state = toggle_state(state) 
+                curr_state_timer = 0
 
-        else: # stopping 
-            X, Y = prev_X + get_rand_sensor_error(), prev_Y + get_rand_sensor_error()
+            if state == "moving": 
+                X, Y = get_coordinate(param_fn_input)
+                param_fn_input += 1
+                prev_X, prev_Y = X, Y
 
-        DF.loc[len(DF.index)] = [ X, Y, actual_time, 0, 0 ]
-        
-        curr_state_timer += 1
+            else: # stopping 
+                X, Y = prev_X + get_rand_sensor_error(), prev_Y + get_rand_sensor_error()
+
+            DF.loc[len(DF.index)] = [ X, Y, actual_time, period, day ]
+            
+            curr_state_timer += 1
 
     return DF
 
