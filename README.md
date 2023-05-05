@@ -53,7 +53,7 @@ python generate_demo_data.py
 
 The virtual classroom setting in this demo dataset is a 10 meter by 10 meter square space. Students are seated 2 meters apart in both X and Y directions (see `demo_data/demo_seating_chart.csv` for more details). 
 
-The script-generate teacher movement follows an ellipse shape, which is implemented by the following parametric functions: 
+The script-generated teacher movement follows an ellipse shape, which is implemented by the following parametric functions: 
 
 $$
 X(t) = 3000\cos(0.3t)+5000
