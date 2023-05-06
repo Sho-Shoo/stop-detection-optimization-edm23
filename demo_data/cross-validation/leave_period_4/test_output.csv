@@ -1,0 +1,2 @@
+duration,radius,range,timeframe,n_hits,n_misses,n_false_alarms_inside,n_false_alarms_outside,maximization,fold
+3,200,1300,10,0,0,0,184,absolute,4

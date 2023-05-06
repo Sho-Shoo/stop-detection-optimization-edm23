@@ -34,7 +34,9 @@ You can also manually install the following libraries:
 ├── README.md
 ├── demo_data
 │   ├── cross-validation                                  # partitioned data for CV together with results output
-│   │   ├── ...
+│   │   ├── ...                                           # directories specific to each fold
+│   │   ├── cv_results.csv                                # chosen parameters for each CV fold
+│   │   ├── overall_cv_test_output.csv                    # each fold's chosen parameters' performance metric on test sets
 │   ├── demo_obs_log.csv                                  # demo observation log, manually generated
 │   ├── demo_param_sweep_results_medium_resolution.csv    # sample parameter sweep results using medium resolution grid
 │   ├── demo_position_data.csv                            # demo teacher position data
