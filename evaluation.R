@@ -40,16 +40,6 @@ out %>%
 ############## Evaluation on full training set ##############
 
 d <- read_csv(here::here('demo_data', 'parameter_sweep_full_v1.csv')) %>% 
-  
-
-d %>% 
-  slice(which.max(sigma_baseline))
-
-d %>% 
-  slice(which.max(precision_baseline))
-
-d %>% 
-  slice(which.max(recall_baseline))
 
 d %>% 
   slice(which.max(precision_recall_avg_baseline))
@@ -132,8 +122,6 @@ plotly::plot_ly(data=d, x=~duration,y=~radius,z=~range, marker=list(color=~recal
       showarrow = FALSE
     ))
 
-# TODO: Calculate ROC curve
-
 plot(d$precision_baseline, d$recall_baseline)
 
 plot(d$precision_baseline_all, d$recall_baseline)
@@ -150,9 +138,7 @@ ggplot(d, aes(precision_baseline_all, recall_baseline)) +
 
 ggsave('pre-rec.pdf', width = 6, height = 6)
 
-# theoretical bounds: slope is such that you get more recall for sacrificing less precision (all)
-
-# Bound 1: Largest recall
+# Bound 1: Largest recall (absolute maximization)
 
 # duration = 6
 # radius = 1800
@@ -161,7 +147,7 @@ d %>%
   slice(which.max(recall_baseline)) %>% 
   select(duration, radius, range, recall_baseline, precision_baseline_all)
 
-# Bound 2: Precision at least 0.2
+# Bound 2: Precision at least 0.2 (conditional maximization)
 
 # duration = 21
 # radius = 600
@@ -171,24 +157,3 @@ d %>%
   filter(precision_baseline_all >= 0.2) %>% 
   slice(which.max(recall_baseline)) %>% 
   select(duration, radius, range, recall_baseline, precision_baseline_all)
-
-# TODO: Add statistical power x sample size justification for how we select bounds?
-# TODO: -. could add other considerations in workshop paper, e.g., theoretical grounds
-# TODO: Add robustness checks if we want for AIED
-
-# d %>% 
-#   filter(precision_baseline_all >= 0.25) %>% 
-#   slice(which.max(recall_baseline)) %>% 
-#   select(duration, radius, range, recall_baseline, precision_baseline_all)
-
-d %>% 
-  mutate(
-    min_dur = min(duration),
-    max_dur = max(duration),
-    min_rad = min(radius),
-    max_rad = max(radius),
-    min_ran = min(range),
-    max_ran = max(range)
-  ) %>% 
-  select(matches('min|max')) %>% 
-  head(1)
