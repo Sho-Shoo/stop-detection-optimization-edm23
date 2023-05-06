@@ -1,4 +1,19 @@
-# Stop Detection Code Demo for EDM 2023
+# Teacher Visit Detection in Diverse Classrooms Layouts
+
+Supplementary repository for the EDM '23 paper "Optimizing Parameters for Accurate Position Data Mining in Diverse Classrooms Layouts"
+
+## Citation 
+
+Shou, T., Borchers, C., Karumbaiah, S., & Aleven, V. (2023). Optimizing Parameters for Accurate Position Data Mining in Diverse Classrooms Layouts. In Proceedings of the 16th International Conference on Educational Data Mining (EDM). Bengaluru, India.
+
+```
+@inproceedings{shou2023stop-detection,
+  title={Optimizing Parameters for Accurate Position Data Mining in Diverse Classrooms Layouts},
+  author={Shou, Tianze and Borchers, Conrad and Karumbaiah, Shamya and Aleven, Vincent},
+  booktitle={EDM23: 16th International Conference on Educational Data Mining},
+  year={2023}
+}
+```
 
 ## Dependencies 
 
